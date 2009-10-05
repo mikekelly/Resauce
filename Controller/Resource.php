@@ -42,9 +42,7 @@ abstract class Resauce_Controller_Resource extends Zend_Controller_Action
 	}
 
 	public function __call($method, $args)
-	{
-		//$httpMethod = $this->getRequest()->getMethod();
-		
+	{	
 		$action = strtolower($this->getRequest()->getMethod()) . 'Action';
 
 		if (method_exists($this, $action)) {
