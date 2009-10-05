@@ -2,4 +2,30 @@ h1. "Resauce Framework":http://github.com/mikekelly/Resauce
 
 Resauce is a PHP library/framework which extends Zend Framework. It is intended as a lightweight tool for building RESTful HTTP interfaces.
 
+h2. Introduction
+
+The idea is that every URI pattern is routed to a controller; i.e. a controller is a Resource.
+
+Example Routes:
+
+'/blogposts', array('controller' => 'blogposts')
+
+'/blogposts/:post', array('controller' => 'blogpost')
+
+'/blogposts/:post/comments', array('controller' => 'blogpostcomments')
+
+
+A Resauce controller invokes the action which corresponds to the HTTP Method of a given request
+
+i.e.
+
+* GET >> getAction()
+* PUT >> putAction()
+* POST >> postAction()
+* DELETE >> deleteAction()
+* HEAD >> headAction()
+* OPTIONS >> optionsAction()
+
+If a request is made to a resource which does not have an action implemented for the relevant HTTP method, then the server will automatically respond with a 405 Method Not Allowed response code, and a short JSON entity body.
+
 More to come soon...
