@@ -1,1 +1,5 @@
-Hello World! :)
+h1. "Resauce Framework":http://github.com/mikekelly/Resauce
+
+Resauce is a PHP library/framework which extends Zend Framework. It is intended as a lightweight tool for building RESTful HTTP interfaces.
+
+More to come soon...
