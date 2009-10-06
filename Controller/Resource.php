@@ -16,7 +16,11 @@ abstract class Resauce_Controller_Resource extends Zend_Controller_Action
 			)
 		);	
 	}
-
+	
+	public final function indexAction() {
+		return $this->__call('index',null);
+	}
+	
 	public function getAction() {
 		$this->notAllowedAction();
 	}
@@ -42,7 +46,8 @@ abstract class Resauce_Controller_Resource extends Zend_Controller_Action
 	}
 
 	public function __call($method, $args)
-	{	
+	{
+			
 		$action = strtolower($this->getRequest()->getMethod()) . 'Action';
 
 		if (method_exists($this, $action)) {
