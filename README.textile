@@ -8,14 +8,14 @@ The idea is that every URI pattern is routed to a controller; i.e. a controller 
 
 Example Routes:
 
-'/blogposts', array('controller' => 'blogposts')
+'/blogposts' >> BlogPostsController
 
-'/blogposts/:post', array('controller' => 'blogpost')
+'/blogposts/:post' >> BlogPostController
 
-'/blogposts/:post/comments', array('controller' => 'blogpostcomments')
+'/blogposts/:post/comments' >> BlogPostCommentsController
 
 
-A Resauce controller invokes the action which corresponds to the HTTP Method of a given request
+When a Resauce controller is routed to - it invokes the action which corresponds to the HTTP Method of a given request
 
 i.e.
 
@@ -26,6 +26,6 @@ i.e.
 * HEAD >> headAction()
 * OPTIONS >> optionsAction()
 
-If a request is made to a resource which does not have an action implemented for the relevant HTTP method, then the server will automatically respond with a 405 Method Not Allowed response code, and a short JSON entity body.
+If a request is made to a resource which does not have an action implemented for the relevant HTTP method, then the server will automatically respond with a 405 Method Not Allowed response code.
 
 More to come soon....
