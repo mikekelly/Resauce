@@ -4,10 +4,13 @@ class Resauce_Application_Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
 	public function _initResauceFramework() {
+		$front = Zend_Controller_Front::getInstance();
 		// NotFoundController will handle all URIs by default - Special resource controller for returning 404 response
-		Zend_Controller_Front::getInstance()->setDefaultControllerName('not-found');
+		$front->setDefaultControllerName('not-found');
 		// Remove default routes
-		Zend_Controller_Front::getInstance()->getRouter()->removeDefaultRoutes();
+		$front->getRouter()->removeDefaultRoutes();
+		// add put handler controller module
+		$front->registerPlugin(new Zend_Controller_Plugin_PutHandler());
 		// Add route for root URI
 		$this->addResauceRoutes(array(
 			'/' => 'index'
