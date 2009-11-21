@@ -28,6 +28,7 @@ i.e.
 If a request is routed to a resauce controller which does not have an action implemented for the given HTTP method, then the Resauce will automatically respond with a 405 Method Not Allowed response code.
 
 h2. So what?
+
 The Resauce approach provides much more flexibility over how resources can be exposed than other alternatives - you have complete control of URI patterns and each resource's HTTP methods.
 
 REST is *not* collection/item CRUD; frameworks which fail to realise this (e.g. Zend Framework, Ruby on Rails) are introducing needless restriction - the only (debateable) 'benefit' of which is that your collection and item resources can be handled in one controller and with one route.
@@ -35,6 +36,7 @@ REST is *not* collection/item CRUD; frameworks which fail to realise this (e.g. 
 .. lots more ranting to be done here eventually ..  
 
 h2. Example Usage
+
 Configure routing for your interface by creating an _initRoutes function in your Resauce Bootstrap.
 
 application/Bootstrap.php:
