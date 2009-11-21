@@ -27,4 +27,46 @@ i.e.
 
 If a request is routed to a resauce controller which does not have an action implemented for the given HTTP method, then the Resauce will automatically respond with a 405 Method Not Allowed response code.
 
-.. more to come  ..
+h2. So what?
+The Resauce approach provides much more flexibility over how resources can be exposed than other alternatives - you have complete control of URI patterns and each resource's HTTP methods.
+
+REST is *not* collection/item CRUD; frameworks which fail to realise this (e.g. Zend Framework, Ruby on Rails) are introducing needless restriction - the only (debateable) 'benefit' of which is that your collection and item resources can be handled in one controller and with one route.
+
+.. lots more ranting to be done here eventually ..  
+
+h2. Example Usage
+Configure routing for your interface by creating an _initRoutes function in your Resauce Bootstrap.
+
+application/Bootstrap.php:
+<pre><code><?php
+class Bootstrap extends Resauce_Application_Bootstrap
+{
+	public function _initRoutes() {
+		$this->addResauceRoutes(array(
+			'blog' => 'blog',
+			'blog/:post' => 'blog-post',
+			'blog/:post/comments' => 'blog-post-comments'
+		));
+	}
+}</code></pre>
+
+Then create the controllers in the controller directory, with Actions for HTTP methods you want the URI to support:
+
+e.g. application/controllers/BlogController.php
+<pre><code><?php
+class BlogController extends Resauce_Controller_Resource
+{
+	// Action for handling GET requests i.e. GET /blog
+	public function getAction() {
+		// fetch list of posts, add them to view, render the view
+	}
+	// Action for handling POST requests i.e. POST /blog
+	public function postAction() {
+		// create new post
+	}
+}</code></pre>
+
+For the routes in the example Boostrap above - you will also need to create the other controllers:
+
+BlogPostController.php
+BlogPostCommentsController.php
