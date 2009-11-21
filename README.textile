@@ -4,7 +4,7 @@ Resauce is a small extension to Zend Framework. It gives you a lightweight frame
 
 h2. Introduction
 
-The main idea is to treat each controller as a Resource; i.e. a controller is responsible for *one resource*. This is distint from other solutions (such as the REST components included in ZF itself) where a controller is responsible for both collection and item resources.
+The main idea is to treat each controller as a Resource; i.e. a controller is responsible for *one resource*. This is distinct from other solutions (such as the REST components included in ZF itself) where a controller is responsible for both collection and item resources.
 
 Example Routes:
 
@@ -31,7 +31,7 @@ h2. So what?
 
 The Resauce approach provides much more flexibility over how resources can be exposed than other alternatives - you have complete control of URI patterns and each resource's HTTP methods.
 
-REST is *not* collection/item CRUD; frameworks which fail to realise this (e.g. Zend Framework, Ruby on Rails) are introducing needless restriction - the only (debateable) 'benefit' of which is that your collection and item resources can be handled in one controller and with one route.
+REST is *not* collection/item CRUD; frameworks which fail to realise this (e.g. Zend Framework, Ruby on Rails) are introducing needless restriction - the only (debatable) 'benefit' of which is that your collection and item resources can be handled in one controller and with one route.
 
 .. lots more ranting to be done here eventually ..  
 
