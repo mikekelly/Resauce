@@ -44,10 +44,10 @@ application/Bootstrap.php:
 class Bootstrap extends Resauce_Application_Bootstrap
 {
   public function _initRoutes() {
-	  $this->addResauceRoutes(array(
-	    'blog' => 'blog',
-	    'blog/:post' => 'blog-post',
-	    'blog/:post/comments' => 'blog-post-comments'
+    $this->addResauceRoutes(array(
+      'blog' => 'blog',
+      'blog/:post' => 'blog-post',
+      'blog/:post/comments' => 'blog-post-comments'
     ));
   }
 }</code></pre>
