@@ -29,11 +29,11 @@ If a request is routed to a resauce controller which does not have an action imp
 
 h2. So what?
 
-The Resauce approach provides much more flexibility over how resources can be exposed than other alternatives - you have complete control of URI patterns and each resource's HTTP methods.
+The Resauce approach to MVC provides much more flexibility over how resources can be exposed than other alternatives - you have complete control of URI patterns and each resource's HTTP methods.
 
-REST is *not* collection/item CRUD; frameworks which fail to realise this (e.g. Zend Framework, Ruby on Rails) are introducing needless restriction - the only (debatable) 'benefit' of which is that your collection and item resources can be handled in one controller and with one route.
+REST is *not* collection/item CRUD over HTTP, frameworks that don't agree with this are needlessly restricting and/or confusing developers; when the only (debatable) 'benefit' is that collection and item resources can be handled by one controller and one route.
 
-.. lots more ranting to be done here eventually ..  
+"For every complex problem, there is a solution that is simple, neat, and wrong." - H. L. Mencken
 
 h2. Example Usage
 
@@ -43,13 +43,13 @@ application/Bootstrap.php:
 <pre><code><?php
 class Bootstrap extends Resauce_Application_Bootstrap
 {
-	public function _initRoutes() {
-		$this->addResauceRoutes(array(
-			'blog' => 'blog',
-			'blog/:post' => 'blog-post',
-			'blog/:post/comments' => 'blog-post-comments'
-		));
-	}
+  public function _initRoutes() {
+	  $this->addResauceRoutes(array(
+	    'blog' => 'blog',
+	    'blog/:post' => 'blog-post',
+	    'blog/:post/comments' => 'blog-post-comments'
+    ));
+  }
 }</code></pre>
 
 Then create the controllers in the controller directory, with Actions for HTTP methods you want the URI to support:
@@ -58,17 +58,17 @@ e.g. application/controllers/BlogController.php
 <pre><code><?php
 class BlogController extends Resauce_Controller_Resource
 {
-	// Action for handling GET requests i.e. GET /blog
-	public function getAction() {
-		// fetch list of posts, add them to view, render the view
-	}
-	// Action for handling POST requests i.e. POST /blog
-	public function postAction() {
-		// create new post
-	}
+  // Action for handling GET requests i.e. GET /blog
+  public function getAction() {
+    // fetch list of posts, add them to view, render the view
+  }
+  // Action for handling POST requests i.e. POST /blog
+  public function postAction() {
+    // create new post
+  }
 }</code></pre>
 
-For the routes in the example Boostrap above - you will also need to create the other controllers:
+For the routes in the example Boostrap above - you would, obviously, need to create the other controllers:
 
 BlogPostController.php
 BlogPostCommentsController.php
