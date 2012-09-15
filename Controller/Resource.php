@@ -2,7 +2,7 @@
 
 abstract class Resauce_Controller_Resource extends Zend_Controller_Action
 {
-	private $allow = 'GET, PUT, POST, DELETE, HEAD, OPTIONS';
+	private $allow = 'GET, PUT, PATCH, LINK, UNLINK, POST, DELETE, HEAD, OPTIONS';
 
 	public function notAllowedAction() {
 		// Set Allow header and 405 Code
@@ -19,6 +19,18 @@ abstract class Resauce_Controller_Resource extends Zend_Controller_Action
 	}
 
 	public function putAction() {
+		$this->notAllowedAction();
+	}
+	
+	public function patchAction() {
+		$this->notAllowedAction();
+	}
+	
+	public function linkAction() {
+		$this->notAllowedAction();
+	}
+
+	public function unlinkAction() {
 		$this->notAllowedAction();
 	}
 

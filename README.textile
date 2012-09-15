@@ -20,7 +20,10 @@ i.e.
 
 * GET >> getAction()
 * PUT >> putAction()
+* PATCH >> patchAction()
 * POST >> postAction()
+* LINK >> linkAction()
+* UNLINK >> unlinkAction()
 * DELETE >> deleteAction()
 * HEAD >> headAction()
 * OPTIONS >> optionsAction()
